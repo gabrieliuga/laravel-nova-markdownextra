@@ -5,7 +5,15 @@
         "laravel",
         "nova"
     ],
+    "homepage": "https://github.com/gabrieliuga/laravel-nova-markdownextra",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Gabriel Iuga",
+            "email": "me@iuga.dev",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "laravel/framework": ">=6.2",
@@ -26,6 +34,12 @@
     "config": {
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./nova"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
