@@ -14,29 +14,29 @@ class ImageController extends Controller
     {
         $imageFile = $request->file('image');
         if ($imageFile->isValid()) {
-            $newName = $imageFile->storePublicly('public' . DIRECTORY_SEPARATOR . config('markdownextra.image_folder'), ['disk' => config('markdownextra.disk')]);
+            $newName = $imageFile->storePublicly('public'.DIRECTORY_SEPARATOR.config('markdownextra.image_folder'), ['disk' => config('markdownextra.disk')]);
             if ($newName !== false) {
                 $fileBits = explode(DIRECTORY_SEPARATOR, $newName);
-                $newFilename = Storage::disk(config('markdownextra.disk'))->url(config('markdownextra.image_folder') . DIRECTORY_SEPARATOR . end($fileBits));
+                $newFilename = Storage::disk(config('markdownextra.disk'))->url(config('markdownextra.image_folder').DIRECTORY_SEPARATOR.end($fileBits));
                 return new JsonResponse([
                     'success' => 1,
                     'file' => [
                         'url' => asset($newFilename),
                         'filename' => $imageFile->getClientOriginalName(),
                         'size' => $imageFile->getSize(),
-                        'mime' => $imageFile->getMimeType()
+                        'mime' => $imageFile->getMimeType(),
                     ]
                 ]);
             } else {
                 return new JsonResponse([
                     'error' => 1,
-                    'message' => 'Failed to save the file'
+                    'message' => 'Failed to save the file',
                 ]);
             }
         }
         return new JsonResponse([
             'error' => 1,
-            'message' => 'You probably sent an invalid file :)'
+            'message' => 'You probably sent an invalid file :)',
         ]);
 
     }
