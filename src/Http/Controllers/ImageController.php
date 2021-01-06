@@ -17,6 +17,7 @@ class ImageController extends Controller
             if ($newName !== false) {
                 $fileBits = explode(DIRECTORY_SEPARATOR, $newName);
                 $newFilename = Storage::disk(config('markdownextra.disk'))->url(config('markdownextra.image_folder').DIRECTORY_SEPARATOR.end($fileBits));
+
                 return new JsonResponse([
                     'success' => 1,
                     'file' => [
