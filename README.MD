@@ -1,4 +1,6 @@
 # Laravel nova Markdown extended
+[![StyleCI](https://github.styleci.io/repos/327337284/shield?branch=master)](https://github.styleci.io/repos/327337284?branch=master)
+
 
 Allows you to paste images from clipboard straight into the markdown editor
 
