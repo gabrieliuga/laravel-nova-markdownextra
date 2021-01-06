@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
-
     public function uploadImage(ImageUploadRequest $request)
     {
         $imageFile = $request->file('image');
@@ -25,7 +24,7 @@ class ImageController extends Controller
                         'filename' => $imageFile->getClientOriginalName(),
                         'size' => $imageFile->getSize(),
                         'mime' => $imageFile->getMimeType(),
-                    ]
+                    ],
                 ]);
             } else {
                 return new JsonResponse([
@@ -34,10 +33,10 @@ class ImageController extends Controller
                 ]);
             }
         }
+
         return new JsonResponse([
             'error' => 1,
             'message' => 'You probably sent an invalid file :)',
         ]);
-
     }
 }

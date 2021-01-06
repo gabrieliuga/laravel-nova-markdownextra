@@ -17,8 +17,8 @@ class FieldServiceProvider extends ServiceProvider
     public function boot()
     {
         Nova::serving(function (ServingNova $event) {
-            Nova::script('markdownextra', __DIR__ . '/../dist/js/field.js');
-            Nova::style('markdownextra', __DIR__ . '/../dist/css/field.css');
+            Nova::script('markdownextra', __DIR__.'/../dist/js/field.js');
+            Nova::style('markdownextra', __DIR__.'/../dist/css/field.css');
         });
 
         $this->app->booted(function () {
@@ -28,7 +28,7 @@ class FieldServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publishing the config.
             $this->publishes([
-                __DIR__ . '/../config/markdownextra.php' => config_path('markdownextra.php'),
+                __DIR__.'/../config/markdownextra.php' => config_path('markdownextra.php'),
             ], 'markdownextra');
         }
     }
@@ -40,7 +40,7 @@ class FieldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/markdownextra.php', 'markdownextra');
+        $this->mergeConfigFrom(__DIR__.'/../config/markdownextra.php', 'markdownextra');
     }
 
     protected function routes()
@@ -51,6 +51,6 @@ class FieldServiceProvider extends ServiceProvider
 
         Route::middleware(['nova', 'api'])
             ->prefix('nova-vendor/gabrieliuga/markdownextra')
-            ->group(__DIR__ . '/../routes/api.php');
+            ->group(__DIR__.'/../routes/api.php');
     }
 }
