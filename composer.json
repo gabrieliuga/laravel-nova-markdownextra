@@ -1,0 +1,31 @@
+{
+    "name": "gabrieliuga/markdownextra",
+    "description": "Laravel Nova Markdown extension to allow clipboard pasting of images.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": ">=6.2",
+        "laravel/nova": ">=2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gabrieliuga\\Markdownextra\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gabrieliuga\\Markdownextra\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
