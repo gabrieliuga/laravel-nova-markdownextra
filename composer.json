@@ -1,5 +1,5 @@
 {
-    "name": "gabrieliuga/markdownextra",
+    "name": "gabrieliuga/laravel-nova-markdownextra",
     "description": "Laravel Nova Markdown extension to allow clipboard pasting of images.",
     "keywords": [
         "laravel",
